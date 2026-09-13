@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <!-- .NET 9 satisfies the assignment's .NET 6.0+ requirement and is installed locally. -->
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <!-- The default input must be available beside the executable when it is launched from an IDE. -->
+  <ItemGroup>
+    <None Update="Podarok.txt" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <!-- Generate the palette automatically after every successful normal build. -->
+  <Target Name="GenerateBookPalette" AfterTargets="Build" Condition="'$(DesignTimeBuild)' != 'true'">
+    <Exec Command="&quot;$(TargetDir)$(AssemblyName).exe&quot; &quot;$(MSBuildProjectDirectory)\Podarok.txt&quot; &quot;$(MSBuildProjectDirectory)\palette.png&quot; --layout grid --size 36 --columns 20"
+          WorkingDirectory="$(MSBuildProjectDirectory)" />
+  </Target>
+</Project>
