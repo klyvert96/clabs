@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<InvariantGlobalization>false</InvariantGlobalization>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Нужен для Encoding.GetEncoding(1251) в TextReader (fallback для не-UTF8 файлов) -->
+		<PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Входной txt-файл копируется рядом с exe, т.к. путь к нему жёстко задан в коде -->
+		<None Include="Podarok.txt" Condition="Exists('Podarok.txt')">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Include="Aeroport.txt" Condition="Exists('Aeroport.txt')">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5fPaAfEWEJY=",
+  "success": true,
+  "projectFilePath": "E:\\c# labs\\bookpalette\\bookpalette\\bookpalette.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\валодя\\.nuget\\packages\\system.text.encoding.codepages\\9.0.0\\system.text.encoding.codepages.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

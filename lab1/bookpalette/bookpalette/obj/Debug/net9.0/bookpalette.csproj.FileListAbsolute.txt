@@ -1,0 +1,15 @@
+E:\c# labs\bookpalette\bookpalette\bin\Debug\net9.0\Podarok.txt
+E:\c# labs\bookpalette\bookpalette\bin\Debug\net9.0\bookpalette.exe
+E:\c# labs\bookpalette\bookpalette\bin\Debug\net9.0\bookpalette.deps.json
+E:\c# labs\bookpalette\bookpalette\bin\Debug\net9.0\bookpalette.runtimeconfig.json
+E:\c# labs\bookpalette\bookpalette\bin\Debug\net9.0\bookpalette.dll
+E:\c# labs\bookpalette\bookpalette\bin\Debug\net9.0\bookpalette.pdb
+E:\c# labs\bookpalette\bookpalette\obj\Debug\net9.0\bookpalette.GeneratedMSBuildEditorConfig.editorconfig
+E:\c# labs\bookpalette\bookpalette\obj\Debug\net9.0\bookpalette.AssemblyInfoInputs.cache
+E:\c# labs\bookpalette\bookpalette\obj\Debug\net9.0\bookpalette.AssemblyInfo.cs
+E:\c# labs\bookpalette\bookpalette\obj\Debug\net9.0\bookpalette.csproj.CoreCompileInputs.cache
+E:\c# labs\bookpalette\bookpalette\obj\Debug\net9.0\bookpalette.dll
+E:\c# labs\bookpalette\bookpalette\obj\Debug\net9.0\refint\bookpalette.dll
+E:\c# labs\bookpalette\bookpalette\obj\Debug\net9.0\bookpalette.pdb
+E:\c# labs\bookpalette\bookpalette\obj\Debug\net9.0\bookpalette.genruntimeconfig.cache
+E:\c# labs\bookpalette\bookpalette\obj\Debug\net9.0\ref\bookpalette.dll
