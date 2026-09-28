@@ -9,12 +9,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!-- Нужен для Encoding.GetEncoding(1251) в TextReader (fallback для не-UTF8 файлов) -->
+		
 		<PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<!-- Входной txt-файл копируется рядом с exe, т.к. путь к нему жёстко задан в коде -->
+		
 		<None Include="Podarok.txt" Condition="Exists('Podarok.txt')">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
