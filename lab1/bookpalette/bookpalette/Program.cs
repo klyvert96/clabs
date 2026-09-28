@@ -7,7 +7,7 @@ namespace BookColorPalette;
 
 internal static class Program
 {
-    // Input file name is hardcoded per assignment requirements — edit this constant for a different text.
+    // file name 
     private const string InputFileName = "Podarok.txt";
 
     private const string GridOutputFileName = "palette_grid.png";
@@ -29,8 +29,7 @@ internal static class Program
 
             var mentions = ColorLexicon.FindMentions(text);
 
-            // Requirement "Support for different visualization schemes (line, grid)" —
-            // both schemes are generated at once.
+           
             PaletteRenderer.SavePng(mentions, Path.Combine(folder, GridOutputFileName), SquareSize, MaxGridColumns, VisualizationScheme.Grid);
             PaletteRenderer.SavePng(mentions, Path.Combine(folder, LineOutputFileName), SquareSize, MaxGridColumns, VisualizationScheme.Line);
 
@@ -94,7 +93,7 @@ internal static class TextReader
         }
         catch (DecoderFallbackException)
         {
-            // File is not valid UTF-8 — fall back to cp1251, common for Russian-language texts.
+            
             return Encoding.GetEncoding(1251).GetString(bytes);
         }
     }
@@ -108,7 +107,7 @@ internal sealed record ColorMention(string Name, Rgb Color);
 
 internal static class ColorLexicon
 {
-    // Russian color-word stems are kept as-is per assignment requirements.
+    
     private static readonly (string Prefix, string Name, Rgb Color)[] Entries =
     {
         ("красн", "Red", new(255, 0, 0)), ("ал", "Crimson", new(220, 20, 60)),
@@ -124,10 +123,7 @@ internal static class ColorLexicon
         ("розов", "Pink", new(255, 192, 203)), ("бирюз", "Turquoise", new(64, 224, 208))
     };
 
-    // Allowed endings after a color stem — the standard set of Russian adjective endings
-    // (all cases/genders/numbers) plus a few noun endings ("золото", "сера").
-    // This filters out accidental matches like "сердце", "середина", "алгоритм", "альбом",
-    // which used to be misclassified as color mentions because of short prefixes.
+    
     private static readonly string[] ValidSuffixes =
     {
         "",
@@ -186,9 +182,9 @@ internal static class PaletteRenderer
         int count = Math.Max(mentions.Count, 1);
         int columns = scheme switch
         {
-            // Line: all squares in a single row.
+            
             VisualizationScheme.Line => count,
-            // Grid: compact, roughly square layout, capped at maxColumns.
+            
             VisualizationScheme.Grid => Math.Min(maxColumns, Math.Max(1, (int)Math.Ceiling(Math.Sqrt(count)))),
             _ => throw new ArgumentOutOfRangeException(nameof(scheme))
         };
@@ -205,7 +201,7 @@ internal static class PaletteRenderer
             FillSquare(pixels, width, x0, y0, squareSize, mentions[index].Color);
         }
 
-        // Empty input produces one neutral square rather than an invalid zero-sized PNG.
+       
         if (mentions.Count == 0)
             FillSquare(pixels, width, 0, 0, squareSize, new Rgb(240, 240, 240));
 
